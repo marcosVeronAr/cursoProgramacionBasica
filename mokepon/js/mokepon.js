@@ -28,7 +28,9 @@ function iniciarJuego(){
 
     let botonIniciar = document.getElementById('boton-reiniciar')
     botonIniciar.addEventListener('click', reiniciarJuego)
- 
+
+    ocultarAtaques()
+    ocultarBotonReinicio()
 }
 
 function seleccionarMascotaJugador(){
@@ -51,24 +53,33 @@ function seleccionarMascotaJugador(){
     let botonMascotaJugador = document.getElementById('boton-mascota')
     botonMascotaJugador.disabled = true
     seleccionarMascotaEnemigo()
-
-    mostrarAtaques()
+    mostrarAtaque()
     ocultarSeleccionMascotas()
+    mostrarBotonReinicio()
 }
 
 function ocultarSeleccionMascotas() {
     let seleccionarMascota = document.getElementById('seleccionar-mascota')
-    seleccionarMascota.hidden = true
+    seleccionarMascota.style.display = 'none'
 }
 
-function mostrarAtaques() {
+function ocultarAtaques() {
     let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
-    sectionSeleccionarAtaque.hidden = false
+    sectionSeleccionarAtaque.style.display = 'none'
 }
 
+function mostrarAtaque() {
+    let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
+    sectionSeleccionarAtaque.style.display = 'block' 
+}
+
+function ocultarBotonReinicio() {
+    let reiniciar = document.getElementById('reiniciar')
+    reiniciar.style.display = 'none' 
+}
 function mostrarBotonReinicio() {
     let reiniciar = document.getElementById('reiniciar')
-    reiniciar.hidden = false 
+    reiniciar.style.display = 'block' 
 }
 
 function seleccionarMascotaEnemigo(){
@@ -159,7 +170,7 @@ function crearMensajeFinal() {
 function crearMensaje(resultado){
     let sectionMensajes = document.getElementById('mensajes')
     let parrafo = document.createElement('p')
-    parrafo.innerHTML = 'Tu mascota atacó con '+ataqueJugador+', la mascota del enemigo atacó con ' + ataqueEnemigo + ' ' + resultado
+    parrafo.innerHTML = 'Tu mascota atacó con '+ataqueJugador+', la mascota del enemigo atacó con ' + ataqueEnemigo + ' - ' + resultado
     sectionMensajes.appendChild(parrafo)
 }
 

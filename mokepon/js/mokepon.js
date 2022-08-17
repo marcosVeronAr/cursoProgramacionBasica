@@ -55,7 +55,7 @@ function seleccionarMascotaJugador(){
     seleccionarMascotaEnemigo()
     mostrarAtaque()
     ocultarSeleccionMascotas()
-    mostrarBotonReinicio()
+    
 }
 
 function ocultarSeleccionMascotas() {
@@ -70,7 +70,7 @@ function ocultarAtaques() {
 
 function mostrarAtaque() {
     let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
-    sectionSeleccionarAtaque.style.display = 'block' 
+    sectionSeleccionarAtaque.style.display = 'flex' 
 }
 
 function ocultarBotonReinicio() {
@@ -79,7 +79,7 @@ function ocultarBotonReinicio() {
 }
 function mostrarBotonReinicio() {
     let reiniciar = document.getElementById('reiniciar')
-    reiniciar.style.display = 'block' 
+    reiniciar.style.display = 'flex' 
 }
 
 function seleccionarMascotaEnemigo(){
@@ -121,6 +121,7 @@ function ataqueAleatorioEnemigo(){
                 ataqueEnemigo='TIERRA'
             }
 combate()
+mostrarBotonReinicio()
 }
 
 
@@ -149,29 +150,36 @@ function combate(){
 }
 
 function crearMensajeFinal() {
-    let sectionMensajes = document.getElementById('mensajes')
-    let parrafo = document.createElement('p')
+    let sectionMensajes = document.getElementById('resultado')
 
     if (vidasEnemigo == 0) {
-        parrafo.innerHTML = mensajesVictoria[aleatorio(0,3)]
+        sectionMensajes.innerHTML = mensajesVictoria[aleatorio(0,3)]
         apagarBotones()
     }
     else if (vidasJugador == 0) {
-        parrafo.innerHTML = mensajesDerrota[aleatorio(0,3)]
+        sectionMensajes.innerHTML = mensajesDerrota[aleatorio(0,3)]
         apagarBotones()
     } 
-
-
-    sectionMensajes.appendChild(parrafo)
-    mostrarBotonReinicio()
-    
+        
 }
 
 function crearMensaje(resultado){
-    let sectionMensajes = document.getElementById('mensajes')
-    let parrafo = document.createElement('p')
-    parrafo.innerHTML = 'Tu mascota atacó con '+ataqueJugador+', la mascota del enemigo atacó con ' + ataqueEnemigo + ' - ' + resultado
-    sectionMensajes.appendChild(parrafo)
+    let sectionMensajes = document.getElementById('resultado')
+    let ataquesDelJugador = document.getElementById('ataques-del-jugador')
+    let ataquesDelEnemigo = document.getElementById('ataques-del-rival')
+
+    let nuevoAtaqueDelJugador = document.createElement('p')
+    let nuevoAtaqueDelEnemigo = document.createElement('p')
+
+    sectionMensajes.innerHTML = resultado
+    nuevoAtaqueDelJugador.innerHTML = ataqueJugador
+    nuevoAtaqueDelEnemigo.innerHTML = ataqueEnemigo
+    
+
+    
+    ataquesDelJugador.appendChild(nuevoAtaqueDelJugador)
+    ataquesDelEnemigo.appendChild(nuevoAtaqueDelEnemigo)
+    
 }
 
 function restarVidaEnemigo() {

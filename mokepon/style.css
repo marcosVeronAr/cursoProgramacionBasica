@@ -1,0 +1,192 @@
+
+html {
+    box-sizing: border-box;
+}
+
+body{
+    padding-top: 30px;
+    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Silkscreen', cursive;
+    background-color: rgb(10, 10, 10); 
+    color: white;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+#seleccionar-mascota{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.titulo{
+    color:#fff;
+    font-size:42px;
+    font-weight: bold;
+}
+.subtitulo{
+    color:#fff;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+#boton-mascota {
+
+    margin: 40px;
+    width: 200px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 200;
+    cursor: pointer;
+
+    font-family: 'JetBrains Mono', monospace;
+}
+
+#boton-mascota:hover {
+    box-shadow: 11px 5px 28px -9px rgba(0,0,0,0.92);
+    -webkit-box-shadow: 11px 5px 28px -9px rgba(0,0,0,0.92);
+    -moz-box-shadow: 11px 5px 28px -9px rgba(0,0,0,0.92);
+    transform: scale(1.1) ;
+    -webkit-transform: scale(1.1) ;
+    -moz-transform: scale(1.1) ;
+
+    color: black;
+    background-color: white;
+    transition: 0.3s;
+}
+
+.tarjetas {
+    display: flex;
+    gap: 10px;
+}
+
+.tarjeta-de-mokepon {
+    width:180px;
+    height:auto;
+    background:transparent;
+    border: 1px solid white;
+    padding:10px;
+    box-sizing:border-box;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    color:#fff; 
+    cursor: pointer;
+}
+.tarjeta-de-mokepon:hover {
+    background-color: white;
+    color: black;
+}
+
+#hipodoge:checked+label {
+    background-color: blue;
+    color: white;
+}
+
+#capipepo:checked+label {
+    background-color: green;
+    color: white;
+}
+#ratigueya:checked+label {
+    background-color: red;
+    color: white;
+}
+
+.tarjeta-de-mokepon img {
+    width: 80px;
+}
+input {
+    display: none;
+}
+
+
+
+#seleccionar-ataque {
+    flex-direction: column;
+    align-items: center;
+}
+
+#reiniciar {
+    justify-content: center;
+}
+
+#boton-reiniciar {
+    width: 100px;
+    height: 25px;
+    font-family: monospace;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
+}
+#boton-reiniciar:hover {
+    background-color: white;
+    color: black;
+    transition: 0.5s;
+
+}
+
+.boton-ataque{
+    width: 150px;
+    height: 40px;
+    border: 1px solid white;
+    background-color: rgb(27, 27, 27);
+    color: white;
+    cursor: pointer;
+}
+
+#boton-fuego:hover {
+    background-color: red;
+    transition: 1s;
+}
+#boton-agua:hover {
+    background-color: blue;
+    transition: 1s;
+}
+#boton-tierra:hover {
+    background-color: green;
+    transition: 1s;
+}
+
+#mensajes {
+    display: flex;
+    margin-top: 20px;
+    padding-top: 6px;
+    margin-bottom: 20px;
+    width: 100vw;
+    height: auto;
+    color: black;
+    background-color: whitesmoke;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+#mensajes p {
+    display: inline;
+    height: 30px;
+    margin: 0;
+}
+
+#ataques-del-jugador,#ataques-del-rival {
+    font-size: 12px;
+}
+
+
+
+#mensaje-final {
+    text-align: center;
+    width: 450px;
+}
+
+.mensajes-ataques {
+    display: grid;
+    grid-template-columns: 150px 150px;
+    text-align: center;
+}

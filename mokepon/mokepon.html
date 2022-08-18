@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8" />
     <title>MOKEPON!</title>
-    <script src="./js/mokepon.js"></script>
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,7 +46,7 @@
 
         <h2 class="subtitulo">Elige tu ataque:</h2>
 
-        <div>
+        <div class="ataques-container">
             <button id="boton-fuego" class="boton-ataque"> Fuego 🔥</button>
             <button id="boton-agua" class="boton-ataque"> Agua 💧</button>
             <button id="boton-tierra" class="boton-ataque"> Tierra 🌱</button>
@@ -65,10 +64,9 @@
             </section>
         </div>
 
-
         <div class="mensajes-ataques">
 
-            <div class="ataques">
+            <div class>
                 <p id="vidas-jugador">3</p>
                 <p id="mascota-jugador"></p>
                 <div id="ataques-del-jugador"></div>
@@ -85,6 +83,8 @@
         
         
     </section>
+    
+    <script src="./js/mokepon.js"></script>
     
 </body>
 </html>

@@ -142,6 +142,7 @@ input {
 
 #boton-fuego:hover {
     background-color: red;
+    
     transition: 1s;
 }
 #boton-agua:hover {
@@ -159,11 +160,13 @@ input {
     padding-top: 6px;
     margin-bottom: 20px;
     width: 100vw;
-    height: auto;
+    height: 60px;
     color: black;
     background-color: whitesmoke;
     justify-content: center;
     align-items: center;
+    text-align: center;
+
 }
 
 
@@ -182,11 +185,27 @@ input {
 
 #mensaje-final {
     text-align: center;
-    width: 450px;
+    width: 100%;
 }
 
 .mensajes-ataques {
     display: grid;
     grid-template-columns: 150px 150px;
     text-align: center;
+}
+
+@media (max-width: 573px) {
+    .tarjetas {
+        flex-direction: column;
+    }
+
+    .ataques-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px
+    }
+
+    #mensajes {
+        font-size: 12px;
+    }
 }

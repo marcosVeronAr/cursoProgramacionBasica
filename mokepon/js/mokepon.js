@@ -1,3 +1,10 @@
+const sectionMensajes = document.getElementById('resultado')
+const sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
+const botonMascotaJugador = document.getElementById('boton-mascota')
+const botonFuego=document.getElementById('boton-fuego')
+const botonAgua=document.getElementById('boton-agua')
+const botonTierra=document.getElementById('boton-tierra')
+
 let ataqueJugador
 let ataqueEnemigo
 let vidasJugador = 3
@@ -17,13 +24,9 @@ let mensajesDerrota = [
 
 
 function iniciarJuego(){
-    let botonMascotaJugador=document.getElementById('boton-mascota')
     botonMascotaJugador.addEventListener('click',seleccionarMascotaJugador)
-    let botonFuego=document.getElementById('boton-fuego')
     botonFuego.addEventListener('click',ataqueFuego)
-    let botonAgua=document.getElementById('boton-agua')
     botonAgua.addEventListener('click',ataqueAgua)
-    let botonTierra=document.getElementById('boton-tierra')
     botonTierra.addEventListener('click',ataqueTierra)
 
     let botonIniciar = document.getElementById('boton-reiniciar')
@@ -50,7 +53,6 @@ function seleccionarMascotaJugador(){
         location.reload()
     }
 
-    let botonMascotaJugador = document.getElementById('boton-mascota')
     botonMascotaJugador.disabled = true
     seleccionarMascotaEnemigo()
     mostrarAtaque()
@@ -64,12 +66,10 @@ function ocultarSeleccionMascotas() {
 }
 
 function ocultarAtaques() {
-    let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
     sectionSeleccionarAtaque.style.display = 'none'
 }
 
 function mostrarAtaque() {
-    let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
     sectionSeleccionarAtaque.style.display = 'flex' 
 }
 
@@ -150,7 +150,6 @@ function combate(){
 }
 
 function crearMensajeFinal() {
-    let sectionMensajes = document.getElementById('resultado')
 
     if (vidasEnemigo == 0) {
         sectionMensajes.innerHTML = mensajesVictoria[aleatorio(0,3)]
@@ -164,7 +163,6 @@ function crearMensajeFinal() {
 }
 
 function crearMensaje(resultado){
-    let sectionMensajes = document.getElementById('resultado')
     let ataquesDelJugador = document.getElementById('ataques-del-jugador')
     let ataquesDelEnemigo = document.getElementById('ataques-del-rival')
 
@@ -202,14 +200,9 @@ function reiniciarJuego(){
 }
 
 function apagarBotones() {
-
-        let botonFuego=document.getElementById('boton-fuego')
         botonFuego.disabled=true
-        let botonAgua=document.getElementById('boton-agua')
         botonAgua.disabled=true
-        let botonTierra=document.getElementById('boton-tierra')
         botonTierra.disabled=true
-
 }
 
 function aleatorio(min,max){
